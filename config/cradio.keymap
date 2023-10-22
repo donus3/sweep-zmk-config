@@ -92,7 +92,7 @@
             &kp TAB   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &trans     &trans     &trans     &kp F11    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-           &kp K_MUTE  &kp C_PP    &trans     &trans    &kp DEL        &trans     &trans     &trans     &trans     &trans
+           &kp K_MUTE  &kp C_PP    &trans     &trans    &kp DEL        &trans     &trans     &trans     &trans     &bootloader
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
