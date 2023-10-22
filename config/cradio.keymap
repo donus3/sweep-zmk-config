@@ -10,6 +10,11 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1   &ht RALT k2   &ht RCTRL k3 &ht RSHFT k4
 #define BLTH(s1,s2,s3,s4) &bt BT_CLR &bt BT_SEL s1 &bt BT_SEL s2 &bt BT_SEL s3 &bt BT_SEL s4
 
+#define BASE 0
+#define NUM 1
+#define NAV 2
+#define FN 3
+
 / {
     behaviors {
         ht: hold_tap {
@@ -38,7 +43,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 1 TAB   &lt 2 SPACE    &kp ENTER  &lt 3 BSPC
+                                             &mo NUM   &lt NAV SPACE   &kp ENTER  &lt FN BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
