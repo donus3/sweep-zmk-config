@@ -11,29 +11,12 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1   &ht RALT k2   &ht RCTRL k3 &ht RSHFT k4
 #define BLTH(s1,s2,s3,s4) &bt BT_CLR &bt BT_SEL s1 &bt BT_SEL s2 &bt BT_SEL s3 &bt BT_SEL s4
 
-#define MLC &mkp LCLK
-#define MRC &mkp RCLK
+#define MCLK() &mkp LCLK &mkp RCLK
+#define MMV() &mmv MOVE_LEFT &mmv MOVE_RIGHT &mmv MOVE_DOWN &mmv MOVE_UP
+#define MWH() &mwh SCROLL_UP &mwh SCROLL_DOWN &mwh SCROLL_LEFT &mwh SCROLL_RIGHT
 
-#define MML &mmv MOVE_LEFT
-#define MMR &mmv MOVE_RIGHT
-#define MMD &mmv MOVE_DOWN
-#define MMU &mmv MOVE_UP
-
-#define MSU &mwh SCROLL_UP
-#define MSD &mwh SCROLL_DOWN
-#define MSL &mwh SCROLL_LEFT
-#define MSR &mwh SCROLL_RIGHT
-
-#define BASE 0
-#define NUM 1
-#define NAV 2
-#define FN 3
-#define MOUSE 3
-
-#define THB1(ly) &mo ly
-#define THB2(ly) &lt ly SPACE
-#define THB3(ly) &lt ly ENTER
-#define THB4(ly) &lt ly BSPC
+// num, nav, fn, mouse
+#define THUMB() &mo 1 &lt 2 SPACE &lt 3 ENTER &lt 4 BSPC
 
 / {
     behaviors {
@@ -63,7 +46,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             TH1(NUM)   THB2(NAV)     TH3(MOUSE)  THB4(FN)
+                                                                 THUMB()
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -123,10 +106,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         MSL        MSD        MSU        MSR        &trans
+            &trans     &trans     &trans     &trans     &trans         MWH()                                       &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     MCL         MCR       &trans         MML        MMD        MMU        MMR        &trans
+            &trans     &trans     MCLK()                &trans         MMV()                                       &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
