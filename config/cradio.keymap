@@ -11,9 +11,40 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1   &ht RALT k2   &ht RCTRL k3 &ht RSHFT k4
 #define BLTH(s1,s2,s3,s4) &bt BT_CLR &bt BT_SEL s1 &bt BT_SEL s2 &bt BT_SEL s3 &bt BT_SEL s4
 
+#define U_MOUSE_MOVE_MAX 1400                     /* <--- New max speed setting (default: 600) */
+#undef MOVE_UP
+#undef MOVE_DOWN
+#undef MOVE_LEFT
+#undef MOVE_RIGHT
+#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
+#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
+#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
+#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
+
+&mmv {
+    time-to-max-speed-ms = <700>;
+    acceleration-exponent=<1>;
+};
+
+#define U_MOUSE_SCROLL_MAX 30
+#undef SCROLL_UP
+#undef SCROLL_DOWN
+#undef SCROLL_LEFT
+#undef SCROLL_RIGHT
+#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+
+&mwh {
+  time-to-max-speed-ms = <700>;
+  acceleration-exponent=<1>;
+};
+
 #define MCLK() &mkp LCLK &mkp RCLK
 #define MMV() &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT 
 #define MWH() &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT
+
 
 // num, nav, fn, mouse
 #define THUMB() &mo 1 &lt 2 SPACE &lt 3 ENTER &lt 4 BSPC
