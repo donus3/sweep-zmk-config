@@ -21,11 +21,19 @@
 
 #define MSU &mwh SCROLL_UP
 #define MSD &mwh SCROLL_DOWN
+#define MSL &mwh SCROLL_LEFT
+#define MSR &mwh SCROLL_RIGHT
 
 #define BASE 0
 #define NUM 1
 #define NAV 2
 #define FN 3
+#define MOUSE 3
+
+#define THUMB1 &mo NUM   
+#define THUMB2 &lt NAV SPACE   
+#define THUMB3 &lt MOUSE ENTER  
+#define THUMB4 &lt FN BSPC
 
 / {
     behaviors {
@@ -55,7 +63,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NUM   &lt NAV SPACE   &kp ENTER  &lt FN BSPC
+                                             THUMB1     THUMB2         THUMB3     THUMB4
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -115,7 +123,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         &trans     MSD        MSU        &trans     &trans
+            &trans     &trans     &trans     &trans     &trans         MSL        MSD        MSU        MSR        &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans     &trans     MCL         MCR       &trans         MML        MMD        MMU        MMR        &trans
