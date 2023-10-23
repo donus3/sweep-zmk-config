@@ -30,10 +30,10 @@
 #define FN 3
 #define MOUSE 3
 
-#define THUMB1 &mo NUM   
-#define THUMB2 &lt NAV SPACE   
-#define THUMB3 &lt MOUSE ENTER  
-#define THUMB4 &lt FN BSPC
+#define THB1(ly) &mo ly
+#define THB2(ly) &lt ly SPACE
+#define THB3(ly) &lt ly ENTER
+#define THB4(ly) &lt ly BSPC
 
 / {
     behaviors {
@@ -63,7 +63,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             THUMB1     THUMB2         THUMB3     THUMB4
+                                             TH1(NUM)   THB2(NAV)     TH3(MOUSE)  THB4(FN)
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
