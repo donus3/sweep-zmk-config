@@ -12,8 +12,8 @@
 #define BLTH(s1,s2,s3,s4) &bt BT_CLR &bt BT_SEL s1 &bt BT_SEL s2 &bt BT_SEL s3 &bt BT_SEL s4
 
 #define MCLK() &mkp LCLK &mkp RCLK
-#define MMV() &mmv MOVE_LEFT &mmv MOVE_RIGHT &mmv MOVE_DOWN &mmv MOVE_UP
-#define MWH() &mwh SCROLL_UP &mwh SCROLL_DOWN &mwh SCROLL_LEFT &mwh SCROLL_RIGHT
+#define MMV() &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT 
+#define MWH() &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT
 
 // num, nav, fn, mouse
 #define THUMB() &mo 1 &lt 2 SPACE &lt 3 ENTER &lt 4 BSPC
@@ -85,23 +85,6 @@
             >;
         };
 
-        fn {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp F1     &kp F2      &kp F3    &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &kp TAB   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &trans     &trans     &trans     &kp F11    &kp F12
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-           &kp K_MUTE  &kp C_PP    &trans     &trans    &kp DEL        &trans     &trans     &trans     &trans     &bootloader
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
         mouse {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -115,6 +98,23 @@
             &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        fn {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp F1     &kp F2      &kp F3    &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp TAB   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &trans     &trans     &trans     &kp F11    &kp F12
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+           &kp K_MUTE  &kp C_PP    &trans     &trans    &kp DEL        &trans     &trans     &trans     &trans     &bootloader
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
