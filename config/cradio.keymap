@@ -92,7 +92,7 @@
             &trans     &trans     &trans     &trans     &trans         &kp MINUS  &kp EQL    &kp LBKT   &kp RBKT   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         &kp BSLH   &kp GRAV   &trans     &trans     &trans
+            &trans     &trans     &trans     &trans     &trans         &trans     &kp GRAV   &kp BSLH     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
