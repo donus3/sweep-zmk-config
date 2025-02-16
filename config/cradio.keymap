@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25
 #include <dt-bindings/zmk/pointing.h>
 
 // Home row mods macro
@@ -18,6 +18,13 @@
 &mmv {
     x-input-code = <INPUT_REL_X>;
     y-input-code = <INPUT_REL_Y>;
+    time-to-max-speed-ms = <350>;
+    acceleration-exponent = <2>;
+};
+
+&msc {
+    x-input-code = <INPUT_REL_HWHEEL>;
+    y-input-code = <INPUT_REL_WHEEL>;
     time-to-max-speed-ms = <300>;
     acceleration-exponent = <2>;
 };
