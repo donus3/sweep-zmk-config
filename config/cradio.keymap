@@ -29,13 +29,13 @@
     acceleration-exponent = <2>;
 };
 
-#define MCLK() &mkp MB3 &mkp LCLK &mkp RCLK
+#define MCLK() &mkp LCLK &mkp RCLK
 #define MMV() &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
 #define MSC() &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT
 
 
 // num, nav, fn, mouse
-#define THUMB() &mo 1 &lt 2 SPACE &lt 3 ENTER &lt 4 BSPC
+#define THUMB() &mo 1 &lt 2 SPACE ENTER &lt 4 BSPC
 
 / {
     behaviors {
@@ -108,15 +108,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         MSC()                                       &trans
+            &none      &none      &none       &none     &none          MSC()                                       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     MCLK()                           &trans         MMV()                                       &trans
+            &none      &none      &none       &none     &none          MMV()                                       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
+            &kt        &none      &none       &none     &mkp MB3       &none      &none      &none      &none      &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             MCLK()                    &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
