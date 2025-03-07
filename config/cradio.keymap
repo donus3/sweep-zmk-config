@@ -35,7 +35,7 @@
 
 
 // num, nav, fn, mouse
-#define THUMB() &mo 1 &lt 2 SPACE ENTER &lt 4 BSPC
+#define THUMB() &mo 1 &lt 2 SPACE &lt 3 ENTER &lt 4 BSPC
 
 / {
     behaviors {
