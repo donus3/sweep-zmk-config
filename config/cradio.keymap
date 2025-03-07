@@ -111,7 +111,7 @@
             &none      &none      &none       &none     &none          MSC()                                       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &LSHFT     &LCTRL     &LALT       &LGUI      &none          MMV()                                       &LSHFT
+           &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI      &none          MMV()                                    &kp LSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &none        &none      &none       &none     &mkp MB3       &none      &none      &none      &none      &none
